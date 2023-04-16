@@ -7,9 +7,11 @@ return require('packer').startup(function(use)
       "mcchrish/zenbones.nvim",
       requires = "rktjmp/lush.nvim"
   }
+  use 'folke/tokyonight.nvim'
   use 'navarasu/onedark.nvim'
   use 'EdenEast/nightfox.nvim'
   use({ 'rose-pine/neovim', as = 'rose-pine' })
+  use ({ 'projekt0n/github-nvim-theme', tag = 'v0.0.7' })
 
   use 'nvim-lualine/lualine.nvim' -- Statusline
   use 'nvim-lua/plenary.nvim' -- Common utilities

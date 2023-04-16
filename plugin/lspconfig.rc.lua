@@ -72,10 +72,6 @@ nvim_lsp.tsserver.setup {
   capabilities = capabilities,
 }
 
-nvim_lsp.sourcekit.setup {
-  on_attach = on_attach,
-}
-
 nvim_lsp.eslint.setup {
   on_attach = on_attach,
   capabilities = capabilities,

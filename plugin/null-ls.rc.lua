@@ -16,6 +16,7 @@ null_ls.setup {
         group = augroup_format,
         buffer = 0,
         callback = function() vim.cmd('EslintFixAll') end ,
+        -- callback = function() vim.cmd("%!eslint_d --stdin --fix-to-stdout") end ,
         -- callback = function() vim.lsp.buf.formatting_seq_sync() end
       })
     end
