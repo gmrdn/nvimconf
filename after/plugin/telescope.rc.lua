@@ -60,7 +60,12 @@ telescope.load_extension("ui-select")
 telescope.load_extension("live_grep_args")
 
 -- lsp stuff
-vim.keymap.set('n', 'gr',builtin.lsp_references, {})
+vim.keymap.set('n', 'gr',
+  function() 
+    builtin.lsp_references({
+      show_line = false,
+    })
+  end)
 vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, {})
 vim.keymap.set('n', '<leader>cd', vim.diagnostic.open_float, {})
 vim.keymap.set('n', '<leader>cr', vim.lsp.buf.rename, {})
@@ -83,7 +88,7 @@ vim.keymap.set('n', '<leader>d', builtin.diagnostics, {})
 vim.keymap.set('n', '<leader>gst', builtin.git_status, {})
 -- buffers
 vim.keymap.set('n', '<leader>b',
-  function() 
+  function()
     builtin.buffers({
       sort_mru = true,
       ignore_current_buffer = true,
