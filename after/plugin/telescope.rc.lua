@@ -77,11 +77,20 @@ vim.keymap.set('n', '<leader>f',
     })
   end)
 vim.keymap.set('n', '<leader>r', live_grep_extension.live_grep_args, {})
-vim.keymap.set('n', '\\\\', builtin.buffers, {})
 vim.keymap.set('n', '<leader><leader>', builtin.resume, {})
 vim.keymap.set('n', '<leader>t', builtin.help_tags, {})
 vim.keymap.set('n', '<leader>d', builtin.diagnostics, {})
 vim.keymap.set('n', '<leader>gst', builtin.git_status, {})
+-- buffers
+vim.keymap.set('n', '<leader>b',
+  function() 
+    builtin.buffers({
+      sort_mru = true,
+      ignore_current_buffer = true,
+    })
+  end)
+vim.keymap.set('n', '<leader>o', builtin.oldfiles, {})
+-- file browser
 vim.keymap.set("n", "sf", function()
   telescope.extensions.file_browser.file_browser({
     path = "%:p:h",
