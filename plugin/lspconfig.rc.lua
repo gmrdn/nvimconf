@@ -72,10 +72,23 @@ nvim_lsp.tsserver.setup {
   capabilities = capabilities,
 }
 
-nvim_lsp.eslint.setup {
-  on_attach = on_attach,
+nvim_lsp.eslint.setup({
+  on_attach = function(client, bufnr)
+    vim.api.nvim_create_autocmd("BufWritePre", {
+      buffer = bufnr,
+      command = "EslintFixAll",
+    })
+  end,
+  settings = {
+    workingDirectory = {
+      mode = "location",
+    },
+  },
+  root_dir = nvim_lsp.util.find_git_ancestor,
   capabilities = capabilities,
-}
+})
+
+nvim_lsp.jsonls.setup{}
 
 nvim_lsp.yamlls.setup {
   settings = {
@@ -88,6 +101,8 @@ nvim_lsp.yamlls.setup {
   },
   on_attach = on_attach,
 }
+
+nvim_lsp.tailwindcss.setup {}
 
 
 nvim_lsp.gopls.setup{
