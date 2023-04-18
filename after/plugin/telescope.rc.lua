@@ -13,7 +13,7 @@ local live_grep_extension = require "telescope".extensions.live_grep_args
 
 telescope.setup {
   defaults = {
-    path_display = { "shorten" },
+    path_display = { "truncate" },
     mappings = {
       n = {
         ["q"] = actions.close
