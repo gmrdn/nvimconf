@@ -37,4 +37,4 @@ keymap.set('n', '<C-w><up>', '<C-w>+')
 keymap.set('n', '<C-w><down>', '<C-w>-')
 
 -- Neotree
-keymap.set('n', '<leader>e', ':NeoTreeShowToggle<Return>', { silent = true })
+keymap.set('n', '<leader>e', ':NeoTreeReveal<Return>', { silent = true })
