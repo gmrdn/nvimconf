@@ -84,6 +84,11 @@ _G.packer_plugins = {
     path = "/Users/grndn/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
+  ["awesome-vim-colorschemes"] = {
+    loaded = true,
+    path = "/Users/grndn/.local/share/nvim/site/pack/packer/start/awesome-vim-colorschemes",
+    url = "https://github.com/ rafi/awesome-vim-colorschemes"
+  },
   catppuccin = {
     loaded = true,
     path = "/Users/grndn/.local/share/nvim/site/pack/packer/start/catppuccin",

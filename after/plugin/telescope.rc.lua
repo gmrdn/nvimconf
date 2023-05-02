@@ -7,9 +7,6 @@ local function telescope_buffer_dir()
   return vim.fn.expand('%:p:h')
 end
 
-local fb_actions = require "telescope".extensions.file_browser.actions
-local live_grep_extension = require "telescope".extensions.live_grep_args
-
 
 telescope.setup {
   defaults = {
@@ -21,25 +18,6 @@ telescope.setup {
     },
   },
   extensions = {
-    file_browser = {
-      theme = "dropdown",
-      -- disables netrw and use telescope-file-browser in its place
-      hijack_netrw = true,
-      mappings = {
-        -- your custom insert mode mappings
-        ["i"] = {
-          ["<C-w>"] = function() vim.cmd('normal vbd') end,
-        },
-        ["n"] = {
-          -- your custom normal mode mappings
-          ["N"] = fb_actions.create,
-          ["h"] = fb_actions.goto_parent_dir,
-          ["/"] = function()
-            vim.cmd('startinsert')
-          end
-        },
-      },
-    },
     fzf = {
       fuzzy = true,                    -- false will only do exact matching
       override_generic_sorter = true,  -- override the generic sorter
@@ -54,10 +32,8 @@ telescope.setup {
   },
 }
 
-telescope.load_extension("file_browser")
 telescope.load_extension('fzf')
 telescope.load_extension("ui-select")
-telescope.load_extension("live_grep_args")
 
 -- lsp stuff
 vim.keymap.set('n', 'gr',
@@ -72,39 +48,27 @@ vim.keymap.set('n', '<leader>cr', vim.lsp.buf.rename, {})
 vim.keymap.set('n', 'gd', builtin.lsp_definitions, {})
 vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})
 
-
--- file finder
-vim.keymap.set('n', '<leader>f',
-  function()
-    builtin.find_files({
-      no_ignore = false,
-      hidden = true
-    })
-  end)
-vim.keymap.set('n', '<leader>r', live_grep_extension.live_grep_args, {})
-vim.keymap.set('n', '<leader><leader>', builtin.resume, {})
-vim.keymap.set('n', '<leader>t', builtin.help_tags, {})
-vim.keymap.set('n', '<leader>d', builtin.diagnostics, {})
-vim.keymap.set('n', '<leader>gst', builtin.git_status, {})
--- buffers
-vim.keymap.set('n', '<leader>b',
+-- See `:help telescope.builtin`
+vim.keymap.set('n', '<leader>?', builtin.oldfiles, { desc = '[?] Find recently opened files' })
+vim.keymap.set('n', '<leader><space>',
   function()
     builtin.buffers({
       sort_mru = true,
       ignore_current_buffer = true,
     })
-  end)
-vim.keymap.set('n', '<leader>o', builtin.oldfiles, {})
--- file browser
-vim.keymap.set("n", "sf", function()
-  telescope.extensions.file_browser.file_browser({
-    path = "%:p:h",
-    cwd = telescope_buffer_dir(),
-    respect_gitignore = false,
-    hidden = true,
-    grouped = true,
+  end, { desc = '[ ] Find existing buffers' })
+vim.keymap.set('n', '<leader>/', function()
+  -- You can pass additional configuration to telescope to change theme, layout, etc.
+  builtin.current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
+    winblend = 10,
     previewer = false,
-    initial_mode = "normal",
-    layout_config = { height = 40 }
   })
-end)
+end, { desc = '[/] Fuzzily search in current buffer' })
+
+vim.keymap.set('n', '<leader>gf', builtin.git_files, { desc = 'Search [G]it [F]iles' })
+vim.keymap.set('n', '<leader>sf', builtin.find_files, { desc = '[S]earch [F]iles' })
+vim.keymap.set('n', '<leader>sh', builtin.help_tags, { desc = '[S]earch [H]elp' })
+vim.keymap.set('n', '<leader>sw', builtin.grep_string, { desc = '[S]earch current [W]ord' })
+vim.keymap.set('n', '<leader>sg', builtin.live_grep, { desc = '[S]earch by [G]rep' })
+vim.keymap.set('n', '<leader>sd', builtin.diagnostics, { desc = '[S]earch [D]iagnostics' })
+
