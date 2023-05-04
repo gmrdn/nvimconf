@@ -29,6 +29,14 @@ return require('packer').startup(function(use)
   use 'hrsh7th/nvim-cmp'
 
   use {
+    "folke/which-key.nvim",
+    config = function()
+      vim.o.timeout = true
+      vim.o.timeoutlen = 300
+    end
+  }
+
+  use {
     "nvim-neo-tree/neo-tree.nvim",
     branch = "v2.x",
     requires = { 

@@ -42,11 +42,11 @@ vim.keymap.set('n', 'gr',
       show_line = false,
     })
   end)
-vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, {})
-vim.keymap.set('n', '<leader>cd', vim.diagnostic.open_float, {})
-vim.keymap.set('n', '<leader>cr', vim.lsp.buf.rename, {})
-vim.keymap.set('n', 'gd', builtin.lsp_definitions, {})
-vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})
+vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, { desc = '[C]ode [A]ctions' })
+vim.keymap.set('n', '<leader>cd', vim.diagnostic.open_float, {desc = '[C]ode [D]iagnostics'})
+vim.keymap.set('n', '<leader>cr', vim.lsp.buf.rename, { desc = '[C]ode [R]ename' })
+vim.keymap.set('n', 'gd', builtin.lsp_definitions, { desc = '[G]oto [D]efinitions' })
+vim.keymap.set('n', 'K', vim.lsp.buf.hover, { desc = 'Show [K]ind' })
 
 -- See `:help telescope.builtin`
 vim.keymap.set('n', '<leader>?', builtin.oldfiles, { desc = '[?] Find recently opened files' })
