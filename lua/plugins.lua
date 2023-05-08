@@ -12,7 +12,7 @@ return require('packer').startup(function(use)
   use 'EdenEast/nightfox.nvim'
   use 'sainnhe/gruvbox-material'
   use({ 'rose-pine/neovim', as = 'rose-pine' })
-  use ({ 'projekt0n/github-nvim-theme', tag = 'v0.0.7' })
+  -- use ({ 'projekt0n/github-nvim-theme', tag = 'v0.0.7' })
 
   use 'nvim-lualine/lualine.nvim' -- Statusline
   use 'nvim-lua/plenary.nvim' -- Common utilities

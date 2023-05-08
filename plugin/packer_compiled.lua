@@ -129,11 +129,6 @@ _G.packer_plugins = {
     path = "/Users/grndn/.local/share/nvim/site/pack/packer/start/git.nvim",
     url = "https://github.com/dinhhuy258/git.nvim"
   },
-  ["github-nvim-theme"] = {
-    loaded = true,
-    path = "/Users/grndn/.local/share/nvim/site/pack/packer/start/github-nvim-theme",
-    url = "https://github.com/projekt0n/github-nvim-theme"
-  },
   ["gitsigns.nvim"] = {
     loaded = true,
     path = "/Users/grndn/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
