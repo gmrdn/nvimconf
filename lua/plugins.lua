@@ -11,6 +11,7 @@ return require('packer').startup(function(use)
   use 'navarasu/onedark.nvim'
   use 'EdenEast/nightfox.nvim'
   use 'sainnhe/gruvbox-material'
+  use 'sainnhe/edge'
   use({ 'rose-pine/neovim', as = 'rose-pine' })
   -- use ({ 'projekt0n/github-nvim-theme', tag = 'v0.0.7' })
 
