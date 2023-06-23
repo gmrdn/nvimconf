@@ -2,18 +2,19 @@ vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
+  -- colorschemes
   use { "catppuccin/nvim", as = "catppuccin" }
   use {
       "mcchrish/zenbones.nvim",
       requires = "rktjmp/lush.nvim"
   }
+  use "savq/melange-nvim"
   use 'folke/tokyonight.nvim'
   use 'navarasu/onedark.nvim'
   use 'EdenEast/nightfox.nvim'
   use 'sainnhe/gruvbox-material'
   use 'sainnhe/edge'
   use({ 'rose-pine/neovim', as = 'rose-pine' })
-  -- use ({ 'projekt0n/github-nvim-theme', tag = 'v0.0.7' })
 
   use 'nvim-lualine/lualine.nvim' -- Statusline
   use 'nvim-lua/plenary.nvim' -- Common utilities
@@ -46,7 +47,6 @@ return require('packer').startup(function(use)
       "MunifTanjim/nui.nvim",
     }
   }
-  use 'jose-elias-alvarez/null-ls.nvim' -- Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua
   use 'williamboman/mason.nvim'
   use 'williamboman/mason-lspconfig.nvim'
   use 'eandrju/cellular-automaton.nvim'

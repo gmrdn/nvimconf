@@ -11,7 +11,7 @@ vim.g.mapleader = ' '
 
 vim.opt.title = true
 vim.opt.autoindent = true
-vim.opt.hlsearch = true
+vim.opt.hlsearch = false
 
 vim.opt.backup = false
 vim.opt.showcmd = true
