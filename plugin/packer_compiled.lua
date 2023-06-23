@@ -124,6 +124,11 @@ _G.packer_plugins = {
     path = "/Users/grndn/.local/share/nvim/site/pack/packer/start/dressing.nvim",
     url = "https://github.com/stevearc/dressing.nvim"
   },
+  edge = {
+    loaded = true,
+    path = "/Users/grndn/.local/share/nvim/site/pack/packer/start/edge",
+    url = "https://github.com/sainnhe/edge"
+  },
   ["git.nvim"] = {
     loaded = true,
     path = "/Users/grndn/.local/share/nvim/site/pack/packer/start/git.nvim",
@@ -179,6 +184,11 @@ _G.packer_plugins = {
     path = "/Users/grndn/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
   },
+  ["melange-nvim"] = {
+    loaded = true,
+    path = "/Users/grndn/.local/share/nvim/site/pack/packer/start/melange-nvim",
+    url = "https://github.com/savq/melange-nvim"
+  },
   ["neo-tree.nvim"] = {
     loaded = true,
     path = "/Users/grndn/.local/share/nvim/site/pack/packer/start/neo-tree.nvim",
@@ -193,11 +203,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/grndn/.local/share/nvim/site/pack/packer/start/nui.nvim",
     url = "https://github.com/MunifTanjim/nui.nvim"
-  },
-  ["null-ls.nvim"] = {
-    loaded = true,
-    path = "/Users/grndn/.local/share/nvim/site/pack/packer/start/null-ls.nvim",
-    url = "https://github.com/jose-elias-alvarez/null-ls.nvim"
   },
   ["nvim-autopairs"] = {
     loaded = true,
