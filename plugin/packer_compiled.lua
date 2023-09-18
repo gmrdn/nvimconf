@@ -304,6 +304,11 @@ _G.packer_plugins = {
     path = "/Users/grndn/.local/share/nvim/site/pack/packer/start/tokyonight.nvim",
     url = "https://github.com/folke/tokyonight.nvim"
   },
+  ["vim-helm"] = {
+    loaded = true,
+    path = "/Users/grndn/.local/share/nvim/site/pack/packer/start/vim-helm",
+    url = "https://github.com/towolf/vim-helm"
+  },
   ["vim-illuminate"] = {
     loaded = true,
     path = "/Users/grndn/.local/share/nvim/site/pack/packer/start/vim-illuminate",

@@ -73,6 +73,9 @@ return require('packer').startup(function(use)
   use 'numToStr/Comment.nvim'
   use "kylechui/nvim-surround"
 
+  -- Helm
+  use 'towolf/vim-helm'
+
   -- Go
   use 'ray-x/go.nvim'
   use 'ray-x/guihua.lua' -- recommanded if need floating window support
