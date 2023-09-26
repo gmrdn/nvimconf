@@ -15,6 +15,7 @@ return require('packer').startup(function(use)
   use 'sainnhe/gruvbox-material'
   use 'sainnhe/edge'
   use({ 'rose-pine/neovim', as = 'rose-pine' })
+  use({ "neanias/everforest-nvim"})
 
   use 'nvim-lualine/lualine.nvim' -- Statusline
   use 'nvim-lua/plenary.nvim' -- Common utilities
