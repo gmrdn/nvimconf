@@ -8,7 +8,6 @@ return require('packer').startup(function(use)
       "mcchrish/zenbones.nvim",
       requires = "rktjmp/lush.nvim"
   }
-  use "savq/melange-nvim"
   use 'folke/tokyonight.nvim'
   use 'navarasu/onedark.nvim'
   use 'EdenEast/nightfox.nvim'
@@ -16,11 +15,12 @@ return require('packer').startup(function(use)
   use 'sainnhe/edge'
   use({ 'rose-pine/neovim', as = 'rose-pine' })
   use({ "neanias/everforest-nvim"})
+  use "savq/melange-nvim"
+  use ({ 'projekt0n/github-nvim-theme' })
 
   use 'nvim-lualine/lualine.nvim' -- Statusline
   use 'nvim-lua/plenary.nvim' -- Common utilities
   use 'onsails/lspkind-nvim' -- vscode-like pictograms
-  use 'stevearc/dressing.nvim'
   use "lukas-reineke/indent-blankline.nvim"
   use "RRethy/vim-illuminate"
 
