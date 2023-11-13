@@ -36,6 +36,5 @@ keymap.set('n', '<C-w><right>', '<C-w>>')
 keymap.set('n', '<C-w><up>', '<C-w>+')
 keymap.set('n', '<C-w><down>', '<C-w>-')
 
--- Neotree
-keymap.set('n', '<leader>e', ':NeoTreeReveal<Return>', { silent = true })
-keymap.set('n', '<leader>gst', ':Neotree git_status<Return>', { silent = true })
+-- Mini Files
+keymap.set('n', '<leader>e', ':lua MiniFiles.open(vim.api.nvim_buf_get_name(0))<Return>', { silent = true })
