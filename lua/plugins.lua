@@ -31,6 +31,7 @@ require("lazy").setup({
       vim.cmd.colorscheme 'solarized'
     end,
   },
+  "nyoom-engineering/oxocarbon.nvim",
 
   'nvim-lualine/lualine.nvim', -- Statusline
   'nvim-lua/plenary.nvim', -- Common utilities
@@ -52,7 +53,7 @@ require("lazy").setup({
   'eandrju/cellular-automaton.nvim',
   'L3MON4D3/LuaSnip',
   'nvim-treesitter/nvim-treesitter',
-  'nvim-treesitter/nvim-treesitter-context',
+  -- 'nvim-treesitter/nvim-treesitter-context',
   'kyazdani42/nvim-web-devicons', -- File icons
   'nvim-telescope/telescope.nvim',
   'nvim-telescope/telescope-file-browser.nvim',
