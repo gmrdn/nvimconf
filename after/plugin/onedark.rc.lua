@@ -38,5 +38,5 @@ require('onedark').setup  {
         background = true,    -- use background color for virtual text
     },
 }
--- require('onedark').load()
+require('onedark').load()
 

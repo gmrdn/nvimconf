@@ -1,0 +1,8 @@
+require('mini.extra').setup()
+require('mini.files').setup()
+require('mini.indentscope').setup()
+require('mini.notify').setup()
+require('mini.pick').setup()
+require('mini.visits').setup()
+require('mini.statusline').setup()
+require("mini.starter").setup()

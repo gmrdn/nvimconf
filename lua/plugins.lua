@@ -20,6 +20,7 @@ require("lazy").setup({
   'sainnhe/edge',
   'rose-pine/neovim',
   "neanias/everforest-nvim",
+  "rebelot/kanagawa.nvim",
   "savq/melange-nvim",
   {
     'maxmx03/solarized.nvim',
@@ -28,12 +29,12 @@ require("lazy").setup({
     config = function()
       vim.o.background = 'light' -- or 'light'
 
-      vim.cmd.colorscheme 'solarized'
+      -- vim.cmd.colorscheme 'solarized'
     end,
   },
   "nyoom-engineering/oxocarbon.nvim",
 
-  'nvim-lualine/lualine.nvim', -- Statusline
+  -- 'nvim-lualine/lualine.nvim', -- Statusline
   'nvim-lua/plenary.nvim', -- Common utilities
   'onsails/lspkind-nvim', -- vscode-like pictograms
   "RRethy/vim-illuminate",

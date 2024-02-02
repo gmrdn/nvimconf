@@ -1,5 +1,5 @@
 -- vim.cmd('set background=light')
--- vim.cmd('let g:gruvbox_material_background="hard"')
+-- vim.cmd('let g:gruvbox_material_background="soft"')
 -- vim.cmd('let g:gruvbox_material_enable_italic=1')
 -- vim.cmd('let g:gruvbox_material_enable_bold=0')
 -- vim.cmd('let g:gruvbox_material_diagnostic_virtual_text="colored"')
