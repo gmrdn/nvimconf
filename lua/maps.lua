@@ -38,3 +38,9 @@ keymap.set('n', '<C-w><down>', '<C-w>-')
 
 -- Mini Files
 keymap.set('n', '<leader>e', ':lua MiniFiles.open(vim.api.nvim_buf_get_name(0))<Return>', { silent = true })
+
+-- Buffers
+keymap.set('n', '<leader>n', ':bnext<cr>', { silent = true })
+keymap.set('n', '<leader>p', ':bprevious<cr>', { silent = true })
+keymap.set('n', '<leader>d', ':bdelete<cr>', { silent = true })
+

@@ -12,27 +12,26 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-  "catppuccin/nvim",
-  'folke/tokyonight.nvim',
+  -- "catppuccin/nvim",
+  -- 'folke/tokyonight.nvim',
   'navarasu/onedark.nvim',
-  'EdenEast/nightfox.nvim',
-  'sainnhe/gruvbox-material',
-  'sainnhe/edge',
+  -- 'EdenEast/nightfox.nvim',
+  -- 'sainnhe/gruvbox-material',
+  -- 'sainnhe/edge',
   'rose-pine/neovim',
-  "neanias/everforest-nvim",
   "rebelot/kanagawa.nvim",
-  "savq/melange-nvim",
-  {
-    'maxmx03/solarized.nvim',
-    lazy = false,
-    priority = 1000,
-    config = function()
-      vim.o.background = 'light' -- or 'light'
-
-      -- vim.cmd.colorscheme 'solarized'
-    end,
-  },
-  "nyoom-engineering/oxocarbon.nvim",
+  -- "neanias/everforest-nvim",
+  -- "savq/melange-nvim",
+  -- {
+  --   'maxmx03/solarized.nvim',
+  --   lazy = false,
+  --   priority = 1000,
+  --   config = function()
+  --     vim.o.background = 'light' -- or 'light'
+  --
+  --     -- vim.cmd.colorscheme 'solarized'
+  --   end,
+  -- },
 
   -- 'nvim-lualine/lualine.nvim', -- Statusline
   'nvim-lua/plenary.nvim', -- Common utilities
@@ -40,15 +39,14 @@ require("lazy").setup({
   "RRethy/vim-illuminate",
 
   'neovim/nvim-lspconfig',
-  'hrsh7th/cmp-nvim-lsp',
-  'hrsh7th/cmp-buffer',
-  'hrsh7th/cmp-path',
-  'hrsh7th/cmp-cmdline',
-  'hrsh7th/nvim-cmp',
+  -- 'hrsh7th/cmp-nvim-lsp',
+  -- 'hrsh7th/cmp-buffer',
+  -- 'hrsh7th/cmp-path',
+  -- 'hrsh7th/cmp-cmdline',
+  -- 'hrsh7th/nvim-cmp',
   { 'echasnovski/mini.nvim', version = false },
 
 
-  "nvim-neo-tree/neo-tree.nvim",
   'williamboman/mason.nvim',
   'williamboman/mason-lspconfig.nvim',
   'eandrju/cellular-automaton.nvim',
@@ -64,7 +62,6 @@ require("lazy").setup({
   'windwp/nvim-autopairs',
   'windwp/nvim-ts-autotag',
   'norcalli/nvim-colorizer.lua',
-  'akinsho/nvim-bufferline.lua',
   'github/copilot.vim',
 
   'lewis6991/gitsigns.nvim',
