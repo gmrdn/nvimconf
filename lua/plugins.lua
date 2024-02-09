@@ -20,7 +20,6 @@ require("lazy").setup({
   -- 'sainnhe/edge',
   'rose-pine/neovim',
   "rebelot/kanagawa.nvim",
-  -- "neanias/everforest-nvim",
   -- "savq/melange-nvim",
   -- {
   --   'maxmx03/solarized.nvim',
@@ -36,7 +35,6 @@ require("lazy").setup({
   -- 'nvim-lualine/lualine.nvim', -- Statusline
   'nvim-lua/plenary.nvim', -- Common utilities
   'onsails/lspkind-nvim', -- vscode-like pictograms
-  "RRethy/vim-illuminate",
 
   'neovim/nvim-lspconfig',
   -- 'hrsh7th/cmp-nvim-lsp',

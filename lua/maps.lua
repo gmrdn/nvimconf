@@ -44,3 +44,12 @@ keymap.set('n', '<leader>n', ':bnext<cr>', { silent = true })
 keymap.set('n', '<leader>p', ':bprevious<cr>', { silent = true })
 keymap.set('n', '<leader>d', ':bdelete<cr>', { silent = true })
 
+-- Mini Picks
+keymap.set('n', '<leader>sd', ':Pick diagnostic<Return>', { silent = true })
+keymap.set('n', '<leader>sf', ':Pick git_files<Return>', { silent = true })
+-- keymap.set('n', '<leader>sg', ':Pick grep_live<Return>', { silent = true })
+keymap.set('n', '<leader>sc', ':Pick git_commits<Return>', { silent = true })
+keymap.set('n', '<leader>sv', ':Pick visit_paths<Return>', { silent = true })
+keymap.set('n', '<leader><space>', ':Pick buffers<Return>', { silent = true })
+
+
