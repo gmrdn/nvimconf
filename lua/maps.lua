@@ -50,6 +50,6 @@ keymap.set('n', '<leader>sd', ':Pick diagnostic<Return>', { silent = true })
 -- keymap.set('n', '<leader>sg', ':Pick grep_live<Return>', { silent = true })
 keymap.set('n', '<leader>sc', ':Pick git_commits<Return>', { silent = true })
 keymap.set('n', '<leader>sv', ':Pick visit_paths<Return>', { silent = true })
-keymap.set('n', '<leader><space>', ':Pick buffers<Return>', { silent = true })
+-- keymap.set('n', '<leader><space>', ':Pick buffers<Return>', { silent = true })
 
 
