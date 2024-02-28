@@ -28,8 +28,11 @@ require('onedark').setup  {
     },
 
     -- Custom Highlights --
-    colors = {}, -- Override default colors
-    highlights = {}, -- Override highlight groups
+    colors = {
+    }, -- Override default colors
+    highlights = {
+      Visual= {  bg = "$dark_red" }, -- Override visual selection color
+    }, -- Override highlight groups
 
     -- Plugins Config --
     diagnostics = {

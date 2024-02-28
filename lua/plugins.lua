@@ -20,6 +20,18 @@ require("lazy").setup({
   -- 'sainnhe/edge',
   'rose-pine/neovim',
   "rebelot/kanagawa.nvim",
+  {
+    "folke/tokyonight.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {},
+  },
+  {
+    "craftzdog/solarized-osaka.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {},
+  },
   -- "savq/melange-nvim",
   -- {
   --   'maxmx03/solarized.nvim',
@@ -31,6 +43,11 @@ require("lazy").setup({
   --     -- vim.cmd.colorscheme 'solarized'
   --   end,
   -- },
+  {
+    'AlexvZyl/nordic.nvim',
+    lazy = false,
+    priority = 1000,
+  },
 
   -- 'nvim-lualine/lualine.nvim', -- Statusline
   'nvim-lua/plenary.nvim', -- Common utilities
