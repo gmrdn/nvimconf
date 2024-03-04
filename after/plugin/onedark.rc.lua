@@ -21,17 +21,14 @@ require('onedark').setup  {
         strings = 'none',
         variables = 'none'
     },
-
-    -- Lualine options --
-    lualine = {
-        transparent = false, -- lualine center bar transparency
-    },
-
     -- Custom Highlights --
     colors = {
     }, -- Override default colors
     highlights = {
-      Visual= {  bg = "$dark_red" }, -- Override visual selection color
+      Visual= {  bg = '$dark_red' }, -- Override visual selection color
+      NormalFloat = { bg = "$bg0" },
+      FloatBorder = { bg = "$bg0" },
+      FloatTitle = { bg = "$bg0" },
     }, -- Override highlight groups
 
     -- Plugins Config --
