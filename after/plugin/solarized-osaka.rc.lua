@@ -24,13 +24,11 @@ require("solarized-osaka").setup({
   --- function will be called with a ColorScheme table
   ---@param colors ColorScheme
   on_colors = function(colors) end,
-
-  --- You can override specific highlights to use other groups or a hex color
+--- You can override specific highlights to use other groups or a hex color
   --- function will be called with a Highlights and ColorScheme table
   ---@param highlights Highlights
   ---@param colors ColorScheme
   on_highlights = function(hl, c)
-    local prompt = "#2d3149"
     hl.TelescopeNormal = {
       bg = c.bg_dark,
       fg = c.fg_dark,
@@ -58,7 +56,65 @@ require("solarized-osaka").setup({
       bg = c.bg_dark,
       fg = c.bg_dark,
     }
+    hl.TelescopeSelection = {
+      bg = c.bg_highlight,
+      fg = c.fg,
+    }
+    hl.MiniTablineFill = {
+      bg = c.bg_dark,
+      fg = c.bg_dark,
+    }
+
+    hl.MiniTablineCurrent = {
+      bg = c.bg_dark,
+      fg = c.fg_dark,
+    }
+    hl.MiniTablineHidden = {
+      bg = c.bg_highlight,
+      fg = c.fg_float,
+    }
+     
+    hl.MiniFilesNormal = {
+      bg = c.bg_dark,
+      fg = c.fg_dark,
+    }
+    hl.MiniFilesBorder = {
+      bg = c.bg_dark,
+      fg = c.bg_dark,
+    }
+    hl.MiniFilesTitle = {
+      bg = c.bg_dark,
+      fg = c.bg_dark,
+    }
+    hl.MiniPickBorder = {
+      bg = c.bg_dark,
+      fg = c.bg_dark,
+    }
+    hl.MiniPickTitle = {
+      bg = c.bg_dark,
+      fg = c.bg_dark,
+    }
+    hl.MiniPickNormal = {
+      bg = c.bg_dark,
+      fg = c.fg_dark,
+    }
+    hl.MiniPickSelection = {
+      bg = c.bg_highlight,
+      fg = c.fg,
+    }
+    hl.MiniNotifyBorder = {
+      bg = c.bg_dark,
+      fg = c.bg_dark,
+    }
+    hl.MiniNotifyTitle = {
+      bg = c.bg_dark,
+      fg = c.bg_dark,
+    }
+    hl.MiniNotifyNormal = {
+      bg = c.bg_dark,
+      fg = c.fg_dark,
+    }
   end,
 })
 
--- vim.cmd [[colorscheme solarized-osaka]]
+vim.cmd [[colorscheme solarized-osaka]]
