@@ -15,6 +15,8 @@ require("lazy").setup({
   -- "catppuccin/nvim",
   -- 'folke/tokyonight.nvim',
   'navarasu/onedark.nvim',
+  { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+  'ramojus/mellifluous.nvim',
   -- 'EdenEast/nightfox.nvim',
   -- 'sainnhe/gruvbox-material',
   -- 'sainnhe/edge',

@@ -11,8 +11,8 @@ require("solarized-osaka").setup({
     functions = {},
     variables = {},
     -- Background styles. Can be "dark", "transparent" or "normal"
-    sidebars = "dark", -- style for sidebars, see below
-    floats = "dark", -- style for floating windows
+    sidebars = "tranparent", -- style for sidebars, see below
+    floats = "transparent", -- style for floating windows
   },
   sidebars = { "qf", "help" }, -- Set a darker background on sidebar-like windows. For example: `["qf", "vista_kind", "terminal", "packer"]`
   day_brightness = 0.3, -- Adjusts the brightness of the colors of the **Day** style. Number between 0 and 1, from dull to vibrant colors
@@ -29,6 +29,10 @@ require("solarized-osaka").setup({
   ---@param highlights Highlights
   ---@param colors ColorScheme
   on_highlights = function(hl, c)
+    hl.NormalFloat = {
+      bg = c.bg_dark,
+      fg = c.fg_dark,
+    }
     hl.TelescopeNormal = {
       bg = c.bg_dark,
       fg = c.fg_dark,
@@ -117,4 +121,4 @@ require("solarized-osaka").setup({
   end,
 })
 
-vim.cmd [[colorscheme solarized-osaka]]
+-- vim.cmd [[colorscheme solarized-osaka]]
