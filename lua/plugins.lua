@@ -18,7 +18,7 @@ require("lazy").setup({
   { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
   'ramojus/mellifluous.nvim',
   -- 'EdenEast/nightfox.nvim',
-  -- 'sainnhe/gruvbox-material',
+  'sainnhe/gruvbox-material',
   -- 'sainnhe/edge',
   'rose-pine/neovim',
   "rebelot/kanagawa.nvim",
