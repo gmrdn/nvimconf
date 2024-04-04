@@ -81,7 +81,7 @@ require("lazy").setup({
   'norcalli/nvim-colorizer.lua',
   'github/copilot.vim',
 
-  'lewis6991/gitsigns.nvim',
+  -- 'lewis6991/gitsigns.nvim',
   'dinhhuy258/git.nvim', -- For git blame & browse
   'numToStr/Comment.nvim',
   "kylechui/nvim-surround",
