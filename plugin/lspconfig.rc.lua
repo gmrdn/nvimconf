@@ -70,6 +70,11 @@ nvim_lsp.tsserver.setup {
   filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
   cmd = { "typescript-language-server", "--stdio" },
   capabilities = capabilities,
+  -- init_options = {
+  --   preferences = {
+  --     importModuleSpecifierPreference = "relative",
+  --   },
+  -- },
 }
 
 nvim_lsp.eslint.setup({

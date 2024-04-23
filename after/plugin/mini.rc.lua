@@ -2,7 +2,7 @@
 require('mini.cursorword').setup()
 require('mini.extra').setup()
 require('mini.files').setup()
-require('mini.indentscope').setup()
+require('mini.indentscope').setup({ draw = { animation = require('mini.indentscope').gen_animation.none() } })
 require('mini.notify').setup()
 require('mini.pick').setup()
 require('mini.statusline').setup()
