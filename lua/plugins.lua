@@ -51,7 +51,7 @@ require("lazy").setup({
     priority = 1000,
   },
 
-  -- 'nvim-lualine/lualine.nvim', -- Statusline
+  'nvim-lualine/lualine.nvim', -- Statusline
   'nvim-lua/plenary.nvim', -- Common utilities
   'onsails/lspkind-nvim', -- vscode-like pictograms
 
