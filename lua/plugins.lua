@@ -72,8 +72,8 @@ require("lazy").setup({
   -- 'nvim-treesitter/nvim-treesitter-context',
   'kyazdani42/nvim-web-devicons', -- File icons
   'nvim-telescope/telescope.nvim',
+  { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
   'nvim-telescope/telescope-file-browser.nvim',
-  "nvim-telescope/telescope-fzf-native.nvim",
   {'nvim-telescope/telescope-ui-select.nvim' },
   { "nvim-telescope/telescope-live-grep-args.nvim" },
   'windwp/nvim-autopairs',
