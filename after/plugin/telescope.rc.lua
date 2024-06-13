@@ -17,6 +17,25 @@ telescope.setup {
       },
     },
   },
+  pickers = {
+    git_files = {
+      theme = "dropdown",
+    },
+    buffers = {
+      theme = "dropdown",
+      ignore_current_buffer = true,
+      sort_mru = true,
+      previewer = false,
+      mappings = {
+        i = {
+          ["<c-d>"] = actions.delete_buffer,
+        },
+        n = {
+          ["<c-d>"] = actions.delete_buffer,
+        },
+      },
+    },
+  },
   extensions = {
     fzf = {
       fuzzy = true,                    -- false will only do exact matching
@@ -50,13 +69,7 @@ vim.keymap.set('n', 'K', vim.lsp.buf.hover, { desc = 'Show [K]ind' })
 
 -- See `:help telescope.builtin`
 vim.keymap.set('n', '<leader>?', builtin.oldfiles, { desc = '[?] Find recently opened files' })
-vim.keymap.set('n', '<leader><space>',
-  function()
-    builtin.buffers({
-      sort_mru = true,
-      ignore_current_buffer = true,
-    })
-  end, { desc = '[ ] Find existing buffers' })
+vim.keymap.set('n', '<leader><space>', builtin.buffers,  { desc = '[ ] Find existing buffers' })
 vim.keymap.set('n', '<leader>f', function()
   -- You can pass additional configuration to telescope to change theme, layout, etc.
   builtin.current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
