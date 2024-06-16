@@ -52,6 +52,7 @@ require("lazy").setup({
   },
 
   'nvim-lualine/lualine.nvim', -- Statusline
+  {'akinsho/bufferline.nvim', version = "*", dependencies = 'nvim-tree/nvim-web-devicons'},
   'nvim-lua/plenary.nvim', -- Common utilities
   'onsails/lspkind-nvim', -- vscode-like pictograms
 
