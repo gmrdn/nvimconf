@@ -9,5 +9,4 @@ vim.cmd('let g:gruvbox_material_current_word="underline"')
 vim.cmd('let g:gruvbox_material_transparent_background="2"')
 vim.cmd('let g:gruvbox_material_visual="red background"')
 vim.cmd('let g:gruvbox_material_menu_selection_background="red"')
-
 vim.cmd('colorscheme gruvbox-material')
