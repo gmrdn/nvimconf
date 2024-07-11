@@ -36,7 +36,7 @@ require('mini.files').setup({
   --     end,
   -- },
 })
-require('mini.indentscope').setup({ draw = { animation = require('mini.indentscope').gen_animation.none() } })
+-- require('mini.indentscope').setup({ draw = { animation = require('mini.indentscope').gen_animation.none() } })
 require('mini.notify').setup()
 require('mini.pick').setup()
 -- require('mini.statusline').setup({set_vim_settings = false})

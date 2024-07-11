@@ -14,7 +14,11 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
   -- "catppuccin/nvim",
   -- 'folke/tokyonight.nvim',
-  'navarasu/onedark.nvim',
+  -- 'navarasu/onedark.nvim',
+  {
+    "olimorris/onedarkpro.nvim",
+    priority = 1000, -- Ensure it loads first
+  },
   { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
   'ramojus/mellifluous.nvim',
   -- 'EdenEast/nightfox.nvim',
@@ -28,6 +32,7 @@ require("lazy").setup({
     priority = 1000,
     opts = {},
   },
+  "neanias/everforest-nvim",
   {
     "craftzdog/solarized-osaka.nvim",
     lazy = false,
@@ -55,6 +60,7 @@ require("lazy").setup({
   {'akinsho/bufferline.nvim', version = "*", dependencies = 'nvim-tree/nvim-web-devicons'},
   'nvim-lua/plenary.nvim', -- Common utilities
   'onsails/lspkind-nvim', -- vscode-like pictograms
+  -- { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
 
   'neovim/nvim-lspconfig',
   'hrsh7th/cmp-nvim-lsp',

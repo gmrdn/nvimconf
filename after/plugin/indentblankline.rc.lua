@@ -1,0 +1,14 @@
+-- local ibl = require('ibl')
+-- ibl.setup {
+--   indent = {
+--     char = " ",
+--   },
+--   scope = {
+--     enabled=true,
+--     char = "▎",
+--     highlight = { "Define", "Label" },
+--     show_start = true,
+--     show_end = true,
+--     -- show_exact_scope=true,
+--   }
+-- }

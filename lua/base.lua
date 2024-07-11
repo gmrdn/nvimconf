@@ -1,11 +1,13 @@
 vim.cmd('autocmd!')
 
+vim.opt.background = 'light'
+
 vim.scriptencoding = 'utf-8'
 vim.opt.encoding = 'utf-8'
 vim.opt.fileencoding = 'utf-8'
 
 vim.wo.number = true
-vim.wo.relativenumber = true
+vim.wo.relativenumber = false
 
 vim.g.mapleader = ' '
 
@@ -41,3 +43,4 @@ vim.api.nvim_create_autocmd("InsertLeave", {
 })
 
 vim.opt.formatoptions:append { 'r' }
+
