@@ -1,6 +1,6 @@
 vim.cmd('autocmd!')
 
-vim.opt.background = 'light'
+vim.opt.background = 'dark'
 
 vim.scriptencoding = 'utf-8'
 vim.opt.encoding = 'utf-8'

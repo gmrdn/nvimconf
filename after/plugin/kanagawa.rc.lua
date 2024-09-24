@@ -22,34 +22,34 @@ require('kanagawa').setup({
       local theme = colors.theme
       return {
         -- transparent background
-        NormalFloat = { bg = "none" },
-        FloatBorder = { bg = "none" },
-        FloatTitle = { bg = "none" },
+        -- NormalFloat = { bg = "none" },
+        -- FloatBorder = { bg = "none" },
+        -- FloatTitle = { bg = "none" },
 
         -- Save an hlgroup with dark background and dimmed foreground
         -- so that you can use it where your still want darker windows.
         -- E.g.: autocmd TermOpen * setlocal winhighlight=Normal:NormalDark
-        NormalDark = { fg = theme.ui.fg_dim, bg = theme.ui.bg_m3 },
+        -- NormalDark = { fg = theme.ui.fg_dim, bg = theme.ui.bg_m3 },
 
         -- Popular plugins that open floats will link to NormalFloat by default;
         -- set their background accordingly if you wish to keep them dark and borderless
-        LazyNormal = { bg = theme.ui.bg_m3, fg = theme.ui.fg_dim },
-        MasonNormal = { bg = theme.ui.bg_m3, fg = theme.ui.fg_dim },
+        -- LazyNormal = { bg = theme.ui.bg_m3, fg = theme.ui.fg_dim },
+        -- MasonNormal = { bg = theme.ui.bg_m3, fg = theme.ui.fg_dim },
 
         -- transparent background Telescope
-        TelescopeTitle = { fg = theme.ui.special, bold = true },
-        TelescopePromptNormal = { bg = "none" },
-        TelescopePromptBorder = { fg=theme.ui.bg_m1, bg = "none" },
-        TelescopeResultsNormal = { fg = theme.ui.fg_dim, bg = "none" },
-        TelescopeResultsBorder = { fg = theme.ui.bg_m1, bg = "none" },
-        TelescopePreviewNormal = { bg = "none" },
-        TelescopePreviewBorder = { bg = "none", fg = theme.ui.bg_dim },
+        -- TelescopeTitle = { fg = theme.ui.special, bold = true },
+        -- TelescopePromptNormal = { bg = "none" },
+        -- TelescopePromptBorder = { fg=theme.ui.bg_m1, bg = "none" },
+        -- TelescopeResultsNormal = { fg = theme.ui.fg_dim, bg = "none" },
+        -- TelescopeResultsBorder = { fg = theme.ui.bg_m1, bg = "none" },
+        -- TelescopePreviewNormal = { bg = "none" },
+        -- TelescopePreviewBorder = { bg = "none", fg = theme.ui.bg_dim },
 
         -- popup 
-        Pmenu = { fg = theme.ui.shade0, bg = theme.ui.bg_p1 },  -- add `blend = vim.o.pumblend` to enable transparency
-        PmenuSel = { fg = "NONE", bg = theme.ui.bg_p2 },
-        PmenuSbar = { bg = theme.ui.bg_m1 },
-        PmenuThumb = { bg = theme.ui.bg_p2 },
+        -- Pmenu = { fg = theme.ui.shade0, bg = theme.ui.bg_p1 },  -- add `blend = vim.o.pumblend` to enable transparency
+        -- PmenuSel = { fg = "NONE", bg = theme.ui.bg_p2 },
+        -- PmenuSbar = { bg = theme.ui.bg_m1 },
+        -- PmenuThumb = { bg = theme.ui.bg_p2 },
       }
     end,
     theme = "wave",              -- Load "wave" theme when 'background' option is not set
@@ -59,4 +59,6 @@ require('kanagawa').setup({
     },
 })
 
--- vim.cmd("colorscheme kanagawa")
+
+vim.cmd('set background=dark')
+vim.cmd("colorscheme kanagawa")

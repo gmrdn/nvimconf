@@ -95,6 +95,8 @@ nvim_lsp.eslint.setup({
 
 nvim_lsp.jsonls.setup{}
 
+nvim_lsp.terraformls.setup{}
+
 nvim_lsp.yamlls.setup {
   settings = {
     yaml = {
