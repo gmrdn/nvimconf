@@ -2,4 +2,6 @@ require("everforest").setup({
   background = "medium",
 })
 
--- vim.cmd("colorscheme everforest")
+
+vim.cmd('set background=light')
+vim.cmd("colorscheme everforest")

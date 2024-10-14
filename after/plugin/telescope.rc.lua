@@ -10,12 +10,13 @@ end
 
 telescope.setup {
   defaults = {
-    path_display = { "truncate" },
+    path_display = { "smart" },
     mappings = {
       n = {
         ["q"] = actions.close
       },
     },
+    layout_strategy = 'vertical',
   },
   pickers = {
     buffers = {

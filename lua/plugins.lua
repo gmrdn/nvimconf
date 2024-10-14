@@ -50,12 +50,7 @@ require("lazy").setup({
   --     -- vim.cmd.colorscheme 'solarized'
   --   end,
   -- },
-  {
-    'AlexvZyl/nordic.nvim',
-    lazy = false,
-    priority = 1000,
-  },
-
+  "jake-stewart/multicursor.nvim",
   'nvim-lualine/lualine.nvim', -- Statusline
   {'akinsho/bufferline.nvim', version = "*", dependencies = 'nvim-tree/nvim-web-devicons'},
   'nvim-lua/plenary.nvim', -- Common utilities
