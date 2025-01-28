@@ -1,7 +1,10 @@
-require("everforest").setup({
-  background = "medium",
-})
-
-
-vim.cmd('set background=dark')
-vim.cmd("colorscheme everforest")
+-- require("everforest").setup({
+--   background = "hard",
+--   italics=true,
+--   ui_contrast = "high",
+--   diagnostic_text_highlight = true,
+-- })
+--
+--
+-- vim.cmd('set background=dark')
+-- vim.cmd("colorscheme everforest")

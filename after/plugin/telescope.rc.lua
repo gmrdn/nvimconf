@@ -10,27 +10,33 @@ end
 
 telescope.setup {
   defaults = {
-    path_display = { "smart" },
+    -- initial_mode = "normal",
+    path_display = { "truncate" },
     mappings = {
       n = {
         ["q"] = actions.close
       },
     },
-    layout_strategy = 'vertical',
+    layout_strategy = "flex",
   },
   pickers = {
     buffers = {
       theme = "dropdown",
       ignore_current_buffer = true,
       sort_mru = true,
-      previewer = false,
-      mappings = { i = {
-          ["<c-d>"] = actions.delete_buffer,
-        },
-        n = {
-          ["<c-d>"] = actions.delete_buffer,
-        },
-      },
+      previewer = true,
+    },
+    lsp_references = {
+      theme = "dropdown",
+      previewer = true,
+    },
+    lsp_implementations = {
+      theme = "dropdown",
+      previewer = true,
+    },
+    diagnostics = {
+      theme = "dropdown",
+      previewer = true,
     },
   },
   extensions = {
@@ -63,6 +69,7 @@ vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, { desc = '[C]ode [A]c
 vim.keymap.set('n', '<leader>cd', vim.diagnostic.open_float, {desc = '[C]ode [D]iagnostics'})
 vim.keymap.set('n', '<leader>cr', vim.lsp.buf.rename, { desc = '[C]ode [R]ename' })
 vim.keymap.set('n', 'gd', builtin.lsp_definitions, { desc = '[G]oto [D]efinitions' })
+vim.keymap.set('n', 'gi', builtin.lsp_implementations, { desc = '[G]oto [I]mplementations' })
 vim.keymap.set('n', 'K', vim.lsp.buf.hover, { desc = 'Show [K]ind' })
 
 -- See `:help telescope.builtin`
@@ -84,5 +91,5 @@ vim.keymap.set('n', '<leader>sh', builtin.help_tags, { desc = '[S]earch [H]elp' 
 vim.keymap.set('n', '<leader>sw', builtin.grep_string, { desc = '[S]earch current [W]ord' })
 -- vim.keymap.set('n', '<leader>sg', builtin.live_grep, { desc = '[S]earch by [G]rep' })
 vim.keymap.set("n", "<leader>sg", ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>", { desc = '[S]earch by [G]rep' })
--- vim.keymap.set('n', '<leader>sd', builtin.diagnostics, { desc = '[S]earch [D]iagnostics' })
+vim.keymap.set('n', '<leader>sd', builtin.diagnostics, { desc = '[S]earch [D]iagnostics' })
 
