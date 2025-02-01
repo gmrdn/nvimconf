@@ -113,6 +113,7 @@ nvim_lsp.tailwindcss.setup {}
 
 nvim_lsp.prismals.setup {}
 nvim_lsp.bashls.setup {}
+nvim_lsp.lua_ls.setup {}
 
 
 nvim_lsp.gopls.setup{

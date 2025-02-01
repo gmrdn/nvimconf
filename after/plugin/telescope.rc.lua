@@ -17,26 +17,34 @@ telescope.setup {
         ["q"] = actions.close
       },
     },
-    layout_strategy = "flex",
+    layout_strategy = "horizontal",
   },
   pickers = {
     buffers = {
-      theme = "dropdown",
+      theme = "ivy",
       ignore_current_buffer = true,
       sort_mru = true,
       previewer = true,
     },
     lsp_references = {
-      theme = "dropdown",
-      previewer = true,
+      theme = "cursor",
+      previewer = false,
+      layout_config = {
+        width = 0.65,
+        height = 0.65,
+      },
     },
     lsp_implementations = {
-      theme = "dropdown",
-      previewer = true,
+      theme = "cursor",
+      previewer = false,
+      layout_config = {
+        width = 0.65,
+        height = 0.65,
+      },
     },
     diagnostics = {
-      theme = "dropdown",
-      previewer = true,
+      theme = "ivy",
+      previewer = false,
     },
   },
   extensions = {
