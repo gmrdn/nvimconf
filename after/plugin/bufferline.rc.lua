@@ -1,7 +1,7 @@
 local bufferline = require('bufferline')
 
 bufferline.setup {
-  highlights = require("catppuccin.groups.integrations.bufferline").get(),
+  -- highlights = require("catppuccin.groups.integrations.bufferline").get(),
   options = {
     -- style_preset = bufferline.style_preset.minimal,
     -- indicator = {
@@ -12,9 +12,9 @@ bufferline.setup {
     show_buffer_close_icons = false,
     show_buffer_icons=false,
     show_file_icons = false,
-    diagnostics_indicator = function(count, level, diagnostics_dict, context)
-      local icon = level:match("error") and " " or " "
-      return " " .. icon .. count
-    end
+    -- diagnostics_indicator = function(count, level, diagnostics_dict, context)
+    --   local icon = level:match("error") and " " or " "
+    --   return " " .. icon .. count
+    -- end
   }
 }

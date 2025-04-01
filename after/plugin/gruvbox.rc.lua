@@ -7,5 +7,5 @@ vim.g.gruvbox_material_transparent_background="2"
 vim.g.gruvbox_material_visual="red background"
 vim.g.gruvbox_material_menu_selection_background="red"
 vim.cmd('set background=dark')
--- vim.cmd.colorscheme('gruvbox-material')
+vim.cmd.colorscheme('gruvbox-material')
 
