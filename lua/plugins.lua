@@ -57,12 +57,13 @@ require("lazy").setup({
   'onsails/lspkind-nvim', -- vscode-like pictograms
   -- { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
 
-  'neovim/nvim-lspconfig',
-  'hrsh7th/cmp-nvim-lsp',
-  'hrsh7th/cmp-buffer',
-  'hrsh7th/cmp-path',
-  'hrsh7th/cmp-cmdline',
-  'hrsh7th/nvim-cmp',
+  {'neovim/nvim-lspconfig', dependencies={'saghen/blink.cmp' }},
+  -- 'hrsh7th/cmp-nvim-lsp',
+  -- 'hrsh7th/cmp-buffer',
+  -- 'hrsh7th/cmp-path',
+  -- 'hrsh7th/cmp-cmdline',
+  -- 'hrsh7th/nvim-cmp',
+  {'saghen/blink.cmp', dependencies = { 'rafamadriz/friendly-snippets' }, version = '*'},
   { 'echasnovski/mini.nvim', version = false },
 
 
