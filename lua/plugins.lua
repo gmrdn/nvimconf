@@ -92,8 +92,29 @@ require("lazy").setup({
   'norcalli/nvim-colorizer.lua',
   'github/copilot.vim',
 
+  -- git stuff
   'lewis6991/gitsigns.nvim',
   'dinhhuy258/git.nvim', -- For git blame & browse
+  {
+    "kdheepak/lazygit.nvim",
+    lazy = true,
+    cmd = {
+      "LazyGit",
+      "LazyGitConfig",
+      "LazyGitCurrentFile",
+      "LazyGitFilter",
+      "LazyGitFilterCurrentFile",
+    },
+    -- optional for floating window border decoration
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
+    -- setting the keybinding for LazyGit with 'keys' is recommended in
+    -- order to load the plugin when the command is run for the first time
+    keys = {
+      { "<leader>lg", "<cmd>LazyGit<cr>", desc = "LazyGit" }
+    }
+  },
   'numToStr/Comment.nvim',
   "kylechui/nvim-surround",
 
