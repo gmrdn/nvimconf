@@ -5,6 +5,8 @@ if (not status) then return end
 
 local protocol = require('vim.lsp.protocol')
 
+local util = require 'lspconfig.util'
+
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
 local on_attach = function(client, bufnr)
@@ -70,6 +72,9 @@ nvim_lsp.flow.setup {
 }
 
 nvim_lsp.ts_ls.setup {
+  root_dir = function(fname)
+    return util.root_pattern('.git')(fname)
+  end,
   on_attach = on_attach,
   filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
   cmd = { "typescript-language-server", "--stdio" },
@@ -118,7 +123,20 @@ nvim_lsp.tailwindcss.setup {}
 nvim_lsp.prismals.setup {}
 nvim_lsp.bashls.setup {}
 nvim_lsp.lua_ls.setup {}
-
+nvim_lsp.pyright.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  settings = {
+    python = {
+      analysis = {
+        typeCheckingMode = "off",
+        autoImportCompletions = true,
+        autoSearchPaths = true,
+        useLibraryCodeForTypes = true,
+      },
+    },
+  },
+}
 
 nvim_lsp.gopls.setup{
 	cmd = {'gopls'},

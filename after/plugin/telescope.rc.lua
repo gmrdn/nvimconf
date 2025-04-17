@@ -27,8 +27,8 @@ telescope.setup {
       previewer = true,
     },
     lsp_references = {
-      theme = "cursor",
-      previewer = false,
+      theme = "ivy",
+      previewer = true,
       layout_config = {
         width = 0.65,
         height = 0.65,
