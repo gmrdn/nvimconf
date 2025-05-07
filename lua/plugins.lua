@@ -67,8 +67,8 @@ require("lazy").setup({
   { 'echasnovski/mini.nvim', version = false },
 
 
-  'williamboman/mason.nvim',
-  'williamboman/mason-lspconfig.nvim',
+  {'williamboman/mason.nvim', version="1.11.0" },
+  {'williamboman/mason-lspconfig.nvim', version="1.32.0"},
   'eandrju/cellular-automaton.nvim',
   'L3MON4D3/LuaSnip',
   'nvim-treesitter/nvim-treesitter',
