@@ -108,6 +108,17 @@ nvim_lsp.eslint.setup({
 	capabilities = capabilities,
 })
 
+nvim_lsp.volar.setup({
+	on_attach = on_attach,
+	capabilities = capabilities,
+	filetypes = { "vue", "typescript", "javascript", "javascriptreact", "typescriptreact" },
+	init_options = {
+		typescript = {
+			serverPath = "node_modules/typescript/lib/tsserver.js",
+		},
+	},
+})
+
 nvim_lsp.jsonls.setup({})
 
 nvim_lsp.terraformls.setup({})
