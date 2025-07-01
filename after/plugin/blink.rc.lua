@@ -14,18 +14,25 @@ require('blink.cmp').setup({
     keymap = { preset = 'default' },
 
     appearance = {
-      -- 'mono' (default) for 'Nerd Font Mono' or 'normal' for 'Nerd Font'
-      -- Adjusts spacing to ensure icons are aligned
-      nerd_font_variant = 'mono'
+        use_nvim_cmp_as_default = false,
+        nerd_font_variant = "mono",
     },
 
-    -- (Default) Only show the documentation popup when manually triggered
-    completion = { documentation = { auto_show = false } },
+    completion = {
+        accept = { auto_brackets = { enabled = true } },
+        documentation = {
+            auto_show = true,
+            auto_show_delay_ms = 250,
+            treesitter_highlighting = true,
+            window = { border = "rounded" },
+        },
+    },
+    signature = {
+        enabled = true,
+    },
 
-    -- Default list of enabled providers defined so that you can extend it
-    -- elsewhere in your config, without redefining it, due to `opts_extend`
     sources = {
-      default = { 'lsp', 'path', 'snippets', 'buffer' },
+        default = { 'lsp', 'path', 'snippets', 'buffer' },
     },
 
     -- (Default) Rust fuzzy matcher for typo resistance and significantly better performance
