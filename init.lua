@@ -2,7 +2,20 @@ require('base')
 require('highlights')
 require('maps')
 require('macos')
-require('plugins')
+
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git", "clone", "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git", lazypath
+  })
+end
+vim.opt.rtp:prepend(lazypath)
+
+require("lazy").setup({
+  { import = "plugins" }
+})
+
 
 local augroup = vim.api.nvim_create_augroup
 local autocmd = vim.api.nvim_create_autocmd
@@ -29,5 +42,4 @@ end
 
 
 
--- vim.cmd('colorscheme minischeme')
---
+vim.cmd('colorscheme rose-pine')
