@@ -1,6 +1,6 @@
 return {
-    "mason-org/mason-lspconfig.nvim", 
-    config = function() 
+    "mason-org/mason-lspconfig.nvim",
+    config = function()
         require('mason-lspconfig').setup({
             ensure_installed = {
                 'lua_ls',
@@ -18,6 +18,12 @@ return {
                 'graphql',
                 'prismals',
             },
+            automatic_enable = {
+                exclude = {
+                    "ts_ls",
+                    "eslint",
+                }
+            }
         })
-    end 
+    end
 }
