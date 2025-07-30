@@ -40,28 +40,49 @@ return {
         -- blink capabilities
         local capabilities = require("blink.cmp").get_lsp_capabilities()
 
+        -- vue
+        local vue_language_server_path = vim.fn.stdpath 'data' ..
+            '/mason/packages/vue-language-server/node_modules/@vue/language-server'
+
+        local vue_plugin = {
+            name = '@vue/typescript-plugin',
+            location = vue_language_server_path,
+            languages = { 'vue' },
+            configNamespace = 'typescript',
+        }
 
         nvim_lsp.ts_ls.setup({
             root_dir = function(fname)
                 return util.root_pattern(".git")(fname)
             end,
             on_attach = on_attach,
-            filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
+            filetypes = { "typescript", "javascript", "typescriptreact", "typescript.tsx" },
             cmd = { "typescript-language-server", "--stdio" },
             capabilities = capabilities,
             init_options = {
                 preferences = {
                     importModuleSpecifierPreference = "relative",
                 },
-                plugins = {
-                    {
-                        name = "@vue/typescript-plugin",
-                        location = "/usr/local/lib/node_modules/@vue/language-server",
-                        languages = { "vue" },
-                    },
-                }
             },
         })
+
+        nvim_lsp.vtsls.setup({
+            filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
+            settings = {
+                vtsls = { tsserver = { globalPlugins = { vue_plugin } } },
+                typescript = {
+                    inlayHints = {
+                        parameterNames = { enabled = "literals" },
+                        parameterTypes = { enabled = true },
+                        variableTypes = { enabled = true },
+                        propertyDeclarationTypes = { enabled = true },
+                        functionLikeReturnTypes = { enabled = true },
+                        enumMemberValues = { enabled = true },
+                    },
+                },
+            },
+        })
+        nvim_lsp.vuels.setup({})
 
         nvim_lsp.eslint.setup({
             on_attach = function(client, bufnr)
@@ -79,7 +100,8 @@ return {
             capabilities = capabilities,
         })
 
-        nvim_lsp.volar.setup({})
+
+
 
         vim.diagnostic.config({
             underline = true,
@@ -99,5 +121,5 @@ return {
                 },
             },
         })
-    end
+    end,
 }
