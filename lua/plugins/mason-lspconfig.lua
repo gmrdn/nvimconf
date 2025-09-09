@@ -9,14 +9,10 @@ return {
                 'html',
                 'cssls',
                 'jsonls',
-                'tailwindcss',
-                'pyright',
                 'bashls',
-                'gopls',
                 'dockerls',
                 'yamlls',
                 'graphql',
-                'prismals',
             },
             automatic_enable = {
                 exclude = {

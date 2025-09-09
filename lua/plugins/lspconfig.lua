@@ -41,8 +41,9 @@ return {
         local capabilities = require("blink.cmp").get_lsp_capabilities()
 
         -- vue
-        local vue_language_server_path = vim.fn.stdpath 'data' ..
-            '/mason/packages/vue-language-server/node_modules/@vue/language-server'
+        local vue_language_server_path = vim.fn.stdpath 'data' .. '/mason/packages/vue-language-server/node_modules/@vue/language-server'
+
+        local tsserver_filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' }
 
         local vue_plugin = {
             name = '@vue/typescript-plugin',
@@ -56,10 +57,13 @@ return {
                 return util.root_pattern(".git")(fname)
             end,
             on_attach = on_attach,
-            filetypes = { "typescript", "javascript", "typescriptreact", "typescript.tsx" },
+            filetypes = tsserver_filetypes,
             cmd = { "typescript-language-server", "--stdio" },
             capabilities = capabilities,
             init_options = {
+                plugins = {
+                    vue_plugin,
+                },
                 preferences = {
                     importModuleSpecifierPreference = "relative",
                 },
@@ -67,22 +71,17 @@ return {
         })
 
         nvim_lsp.vtsls.setup({
-            filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
+            filetypes = { 'vue' },
             settings = {
-                vtsls = { tsserver = { globalPlugins = { vue_plugin } } },
-                typescript = {
-                    inlayHints = {
-                        parameterNames = { enabled = "literals" },
-                        parameterTypes = { enabled = true },
-                        variableTypes = { enabled = true },
-                        propertyDeclarationTypes = { enabled = true },
-                        functionLikeReturnTypes = { enabled = true },
-                        enumMemberValues = { enabled = true },
-                    },
+                vtsls = {
+                    tsserver = {
+                        globalPlugins = { vue_plugin }
+                    }
                 },
             },
         })
-        nvim_lsp.vuels.setup({})
+
+        vim.lsp.config('vue_ls', {})
 
         nvim_lsp.eslint.setup({
             on_attach = function(client, bufnr)
