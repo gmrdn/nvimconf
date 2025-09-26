@@ -2,86 +2,16 @@ return {
     "neovim/nvim-lspconfig",
     dependencies = {
         "saghen/blink.cmp",
-        "williamboman/mason.nvim"
+        "williamboman/mason.nvim",
+        "williamboman/mason-lspconfig.nvim",
     },
     config = function()
+        require("mason").setup({ })
+        require("mason-lspconfig").setup()
         local status, nvim_lsp = pcall(require, "lspconfig")
         if not status then
             return
         end
-
-        local protocol = require("vim.lsp.protocol")
-
-        local util = require("lspconfig.util")
-
-        -- Use an on_attach function to only map the following keys
-        -- after the language server attaches to the current buffer
-        local on_attach = function(client, bufnr)
-            if client.name == "ts_ls" then
-                client.server_capabilities.documentFormattingProvider = false -- 0.8 and later
-            end
-            local function buf_set_keymap(...)
-                vim.api.nvim_buf_set_keymap(bufnr, ...)
-            end
-
-            local function buf_set_option(...)
-                vim.api.nvim_buf_set_option(bufnr, ...)
-            end
-
-            --Enable completion triggered by <c-x><c-o>
-            buf_set_option("omnifunc", "v:lua.vim.lsp.omnifunc")
-
-            -- Mappings.
-            local opts = { noremap = true, silent = true }
-        end
-
-
-
-        -- blink capabilities
-        local capabilities = require("blink.cmp").get_lsp_capabilities()
-
-        -- vue
-        local vue_language_server_path = vim.fn.stdpath 'data' .. '/mason/packages/vue-language-server/node_modules/@vue/language-server'
-
-        local tsserver_filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' }
-
-        local vue_plugin = {
-            name = '@vue/typescript-plugin',
-            location = vue_language_server_path,
-            languages = { 'vue' },
-            configNamespace = 'typescript',
-        }
-
-        nvim_lsp.ts_ls.setup({
-            root_dir = function(fname)
-                return util.root_pattern(".git")(fname)
-            end,
-            on_attach = on_attach,
-            filetypes = tsserver_filetypes,
-            cmd = { "typescript-language-server", "--stdio" },
-            capabilities = capabilities,
-            init_options = {
-                plugins = {
-                    vue_plugin,
-                },
-                preferences = {
-                    importModuleSpecifierPreference = "relative",
-                },
-            },
-        })
-
-        nvim_lsp.vtsls.setup({
-            filetypes = { 'vue' },
-            settings = {
-                vtsls = {
-                    tsserver = {
-                        globalPlugins = { vue_plugin }
-                    }
-                },
-            },
-        })
-
-        vim.lsp.config('vue_ls', {})
 
         nvim_lsp.eslint.setup({
             on_attach = function(client, bufnr)
@@ -98,9 +28,6 @@ return {
             root_dir = nvim_lsp.util.find_git_ancestor,
             capabilities = capabilities,
         })
-
-
-
 
         vim.diagnostic.config({
             underline = true,
