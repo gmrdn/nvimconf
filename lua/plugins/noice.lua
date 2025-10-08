@@ -37,6 +37,14 @@ return {
             bottom_search = true,
             command_palette = true,
             long_message_to_split = true,
+            lsp_doc_border = true,
+        },
+        cmdline = {
+            enabled = true, -- enables the Noice cmdline UI
+            view = "cmdline", -- view for rendering the cmdline. Change to `cmdline` to get a classic cmdline at the bottom
+        },
+        messages = {
+            view_search = false, -- view for search count messages. Set to `false` to disable
         },
     },
 }

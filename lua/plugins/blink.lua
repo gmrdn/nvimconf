@@ -5,7 +5,7 @@ return {
     version = '1.*',
     opts = {
         appearance = {
-            use_nvim_cmp_as_default = false,
+            -- use_nvim_cmp_as_default = false,
             nerd_font_variant = 'mono'
         },
 
@@ -23,9 +23,9 @@ return {
                 window = { border = "rounded" },
             },
         },
-        signature = {
-            enabled = true,
-        },
+        -- signature = {
+        --     enabled = true,
+        -- },
         sources = {
             default = { 'lsp', 'path', 'buffer' },
         },
