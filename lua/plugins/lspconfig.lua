@@ -8,25 +8,36 @@ return {
     config = function()
         require("mason").setup({ })
         require("mason-lspconfig").setup()
-        local status, nvim_lsp = pcall(require, "lspconfig")
-        if not status then
-            return
-        end
 
-        nvim_lsp.eslint.setup({
-            on_attach = function(client, bufnr)
-                vim.api.nvim_create_autocmd("BufWritePre", {
-                    buffer = bufnr,
-                    command = "EslintFixAll",
-                })
-            end,
+        vim.lsp.config('eslint', {
             settings = {
-                workingDirectory = {
-                    mode = "location",
+                validate = 'on',
+                codeActionOnSave = {
+                    enable = true,
+                    mode = 'all',
+                },
+                format = true,
+                quiet = false,
+                run = 'onType',
+                problems = {
+                    shortenToSingleLine = false,
+                },
+                workingDirectory = { mode = 'auto' },
+                codeAction = {
+                    disableRuleComment = {
+                        enable = true,
+                        location = 'separateLine',
+                    },
+                    showDocumentation = {
+                        enable = true,
+                    },
                 },
             },
-            root_dir = nvim_lsp.util.find_git_ancestor,
-            capabilities = capabilities,
+        })
+
+        vim.api.nvim_create_autocmd("BufWritePre", {
+            buffer = bufnr,
+            command = "LspEslintFixAll",
         })
 
         vim.diagnostic.config({
