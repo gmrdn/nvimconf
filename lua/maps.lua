@@ -12,10 +12,6 @@ keymap.set('n', 'x', '"_x')
 -- -- Do not yank on paste
 keymap.set('v', 'p', '\"_dP')
 
--- Increment/decrement
-keymap.set('n', '+', '<C-a>')
-keymap.set('n', '-', '<C-x>')
-
 -- Select all
 keymap.set('n', '<C-a>', 'gg<S-v>G')
 
