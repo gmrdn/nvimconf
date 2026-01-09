@@ -4,12 +4,12 @@
 --
 
 -- vim.wo.number = true
--- vim.wo.relativenumber = false
+vim.wo.relativenumber = false
 --
 vim.g.mapleader = " "
 
 vim.opt.title = true
-vim.opt.autoindent = true
+-- vim.opt.autoindent = true
 vim.opt.hlsearch = false
 
 vim.opt.backup = false
@@ -34,3 +34,5 @@ vim.opt.wrap = false -- no wrap lines
 vim.opt.backspace = "start,eol,indent"
 vim.opt.path:append({ "**" }) -- Finding files - Search down into subfolders
 vim.opt.wildignore:append({ "*/node_modules/*" })
+-- disable lazyvim autoformat
+vim.g.autoformat = false
